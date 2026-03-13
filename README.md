@@ -253,7 +253,50 @@ Uma implementação baseada em ponteiros pode, em alguns casos:
 * tornar a lógica mais direta
 * evitar a necessidade de uma variável de índice
 
+```c
+// Exemplo claro usando ponteiros, pensamento que evolui o código
+
+size_t ft_strlen(const char *s) {
+    if (!s)
+        return (0);
+    size_t length = 0;
+    while(*(s + length))
+         ++length;
+    return (length);
+}
+```
 Além disso, o uso de índices depende de um valor numérico que está sendo incrementado. Embora nesse caso específico não seja um problema real, em outras situações o uso inadequado de índices pode levar a situações de **overflow ou underflow**.
 
 Esses são detalhes interessantes que começam a ficar mais claros à medida que aprofundamos nosso entendimento sobre **manipulação de memória e aritmética de ponteiros em C**.
 
+## How to use
+
+Para testar o projeto é bem simples o procedimento. Primeiro, rode o comando:
+
+```bash
+make
+```
+Isso compila a nossa biblioteca e a deixa preparada para ser usada. Com isso, qualquer programa que tiveres como "program.c", que tenha uma função main, pode ser utilizado para os testes. Por padrão, usando o comando **make** isolado, o arquivo de configuração **Makefile** chama a regra padrão **all** configurada ou, se ela não estiver, chama a primeira que foi implementada.
+
+Podes colocar o **include "libft.h"**, no topo do arquivo de seu programa em C, e compilar o programa junto com a biblioteca libft.a como o exemplo a seguir:
+
+```bash
+cc -Wall -Werror -Wextra program.c -L ./libft.a
+```
+* "cc" é um alias para o compilador gcc ou clang disponíveis
+* As flags -Wall -Werror -Wextra mostra todos os warnings e não permite a compilação se tiver um único aviso, alerta. Muito usadas com rigor na École 42.
+* Um detalhe que podem notar é que, se quiserem e souberem quais funções irão usar, podem compilar o programa usando apenas elas como:
+```bash
+# Isso funciona por conta que sei que as duas conversam entre si
+cc -Wall -Werror -Wextra ft_memmove.c ft_memcpy.c
+```
+
+Compilações em C, normalmente, geram uma saída chamada "a.out", programa compilado e pronto para uso, podes colocar um novo nome especificando com a flag -o como o exemplo a seguir:
+
+```bash
+cc -Wall -Werror -Wextra program.c -L ./libft.a -o myProgram
+```
+
+## Team
+
+O projeto Libft é um projeto individual montado na École 42 e o primeiro que inicia o curso. Logo, sou o único membro nesse projeto.
