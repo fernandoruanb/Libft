@@ -1,3 +1,5 @@
+---
+
 # 📚 Libft — My First Custom C Library
 
 ![Library](https://cdn.pixabay.com/photo/2017/08/06/22/01/library-2596809_1280.jpg)
@@ -186,3 +188,74 @@ Esse conhecimento foi extremamente útil em projetos posteriores da 42, como o *
 | ft_strjoin | Concatenates two strings          |
 | ft_memcpy  | Copies memory area                |
 | ft_memmove | Safe memory copy with overlap     |
+
+Aqui está sua explicação organizada em **Markdown em português**, mantendo sua ideia original, mas estruturada para leitura clara em um README.
+
+### 🔍 Entendendo a função `ft_strlen`
+```c
+/*#include <stdio.h>
+#include <string.h>*/
+#include "libft.h"
+
+/*size_t	ft_strlen(const char *s);
+
+int	main(int argc, char **argv)
+{
+	int	result;
+	int	result2;
+
+	if (argc < 2)
+		return (1);
+	result = ft_strlen(argv[1]);
+	result2 = strlen(argv[1]);
+	printf("(MY FUNCTION) %i.\n", result);
+	printf("(ORIGINAL) %i.\n", result2);
+	return (0);
+}*/
+
+size_t	ft_strlen(const char *s)
+{
+	size_t	length;
+
+	length = 0;
+	while (s[length] != '\0')
+		length++;
+	return (length);
+}
+
+```
+A função original `strlen` calcula o comprimento de uma string e retorna esse valor.
+
+Para testar minha implementação, costumo incluir a minha própria biblioteca **Libft** e deixar uma função `main` comentada no arquivo. Dessa forma, consigo transformar temporariamente o arquivo em um programa completo em C, e não apenas em uma função isolada.
+
+Ao incluir o `libft.h`, posso utilizar a minha própria função `ft_strlen` em vez de usar a `strlen` original da biblioteca padrão da linguagem C.
+
+A ideia é simples:
+
+1. Incluir o `libft.h`
+2. Descomentar a função `main`
+3. Compilar o programa
+4. Comparar os resultados entre `ft_strlen` e `strlen`
+
+Assim consigo verificar se o comportamento da minha implementação é o mesmo da função original.
+
+No exemplo apresentado, a string é percorrida utilizando **índices**:
+
+```c
+while (s[length] != '\0')
+````
+
+Essa abordagem é bastante clara e fácil de entender, especialmente para quem está começando a aprender sobre manipulação de strings em C.
+
+No entanto, conforme fui avançando nos estudos e ganhando mais experiência como cadete, percebi que essa mesma função também poderia ser implementada utilizando **ponteiros**.
+
+Uma implementação baseada em ponteiros pode, em alguns casos:
+
+* reduzir o número de linhas de código
+* tornar a lógica mais direta
+* evitar a necessidade de uma variável de índice
+
+Além disso, o uso de índices depende de um valor numérico que está sendo incrementado. Embora nesse caso específico não seja um problema real, em outras situações o uso inadequado de índices pode levar a situações de **overflow ou underflow**.
+
+Esses são detalhes interessantes que começam a ficar mais claros à medida que aprofundamos nosso entendimento sobre **manipulação de memória e aritmética de ponteiros em C**.
+
