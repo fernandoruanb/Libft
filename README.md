@@ -3,8 +3,7 @@
 </p>
 
 <h1 align="center">
-  <br>
-  <a href="https://github.com/SEU_USUARIO/libft">
+  <a href="https://github.com/fernandoruanb/Libft">
     <img src="https://github.com/ayogun/42-project-badges/raw/main/badges/libftm.png" alt="Libft badge" width="200">
   </a>
   <br>
