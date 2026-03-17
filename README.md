@@ -1,216 +1,129 @@
-# 📚 Libft — My First Custom C Library
+<p align="center">
+  <img src="https://github.com/ayogun/42-project-badges/raw/main/covers/cover-libft-bonus.png" alt="Libft cover" width="100%">
+</p>
 
-![Library](https://cdn.pixabay.com/photo/2017/08/06/22/01/library-2596809_1280.jpg)
+<h1 align="center">
+  <br>
+  <a href="https://github.com/SEU_USUARIO/libft">
+    <img src="https://github.com/ayogun/42-project-badges/raw/main/badges/libftm.png" alt="Libft badge" width="200">
+  </a>
+  <br>
+  Libft
+  <br>
+</h1>
 
-## 📖 About the Project
+<h4 align="center">
+  My first custom C library, built from scratch at <a href="https://www.42.fr/" target="_blank">École 42</a>.
+</h4>
 
-A **Libft** é o primeiro grande projeto que desenvolvi durante minha experiência na **École 42**.
+<p align="center">
+  <img src="https://img.shields.io/badge/Final%20Score-125%2F125-00C853?style=for-the-badge" alt="Final Score 125/125">
+  <img src="https://img.shields.io/badge/Language-C-00599C?style=for-the-badge&logo=c" alt="Language C">
+  <img src="https://img.shields.io/badge/Build-Makefile-orange?style=for-the-badge" alt="Build Makefile">
+  <img src="https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge" alt="Status Completed">
+</p>
 
-O objetivo principal desse projeto é ensinar um princípio fundamental da programação: **não depender exclusivamente de funções prontas**, mas sim compreender profundamente como elas funcionam e ser capaz de implementá-las por conta própria.
-
-Durante nossa jornada como estudantes de programação, frequentemente encontramos limitações — seja por não podermos usar determinadas funções da biblioteca padrão ou por percebermos que certas ferramentas que gostaríamos de utilizar simplesmente não existem ainda.
-
-A **Libft** surge justamente como uma solução para isso.
-
-Ela representa o **primeiro passo rumo à liberdade do programador**: construir nossa própria biblioteca de funções, totalmente compreendida, validada e testada por nós mesmos.
-
-Com o tempo, essa biblioteca se torna uma **base pessoal reutilizável**, capaz de acelerar o desenvolvimento de novos projetos.
-
----
-
-## ⚙️ Build System — Makefile
-
-Para organizar e compilar todas essas funções, utilizamos um arquivo de configuração chamado **Makefile**.
-
-O **Makefile** é responsável por:
-
-* definir **como o código será compilado**
-* organizar os arquivos do projeto
-* automatizar o processo de build
-* gerar o arquivo final da biblioteca
-
-No projeto **Libft**, utilizamos esse sistema para gerar uma **biblioteca estática**.
-
-Uma biblioteca estática é um conjunto de funções compiladas que **não fazem parte das bibliotecas padrão do sistema**, mas que podem ser **incluídas manualmente durante a compilação de outros programas**.
-
-Isso permite reutilizar nossas funções em qualquer projeto futuro em C.
+<p align="center">
+  <a href="#about-the-project">About</a> •
+  <a href="#key-features">Key Features</a> •
+  <a href="#main-objectives">Main Objectives</a> •
+  <a href="#function-highlights">Function Highlights</a> •
+  <a href="#how-to-use">How To Use</a> •
+  <a href="#bonus-part">Bonus Part</a> •
+  <a href="#team">Team</a>
+</p>
 
 ---
 
-## 🎯 Main Objective
+<!-- Replace the path below with your own GIF -->
+<!-- ![demo](./assets/libft-demo.gif) -->
 
-O projeto Libft permite desenvolver habilidades essenciais como:
+## About the Project
 
-* compreensão profunda das funções da libc
-* manipulação de memória
-* manipulação de strings
-* criação de bibliotecas reutilizáveis
-* organização de projetos em C
-* automação de build com Makefile
+**Libft** was the first major project I developed during my journey at **École 42**.
+
+The main purpose of this project is to teach one of the most important principles in programming: not relying only on ready-made functions, but understanding how they work internally and being able to rebuild them from scratch.
+
+As programmers, we often face limitations. Sometimes we are not allowed to use certain standard library functions, and sometimes the tools we need simply do not exist yet.
+
+That is where **Libft** becomes valuable.
+
+It represents the **first step toward programmer independence**: building a personal library of reusable functions that we fully understand, test, and control.
+
+Over time, this library becomes a solid foundation for future C projects, helping us write code faster, with more confidence and a deeper understanding of memory, strings, pointers, and data structures.
 
 ---
 
-## 🧠 Example Functions
+## Key Features
 
-Como demonstração do que foi desenvolvido na **Libft**, abaixo explico algumas funções e o que aprendi ao implementá-las.
+- Reimplementation of essential **libc** functions
+- Deep practice with **strings**, **memory**, and **pointers**
+- Creation of a **static library** using **Makefile**
+- Development of reusable utility functions for future projects
+- Introduction to **dynamic memory allocation**
+- Bonus implementation of **linked lists**
+- Stronger understanding of low-level behavior in C
 
-### 🔢 `ft_atoi`
+---
 
-A primeira função que gostaria de mencionar é a **`ft_atoi`**.
+## Main Objectives
 
-Antes de tudo, vale explicar o prefixo **`ft`**, que significa **"forty-two"**. Todas as funções implementadas pelos estudantes da École 42 utilizam esse prefixo para evitar conflitos com as funções originais da biblioteca padrão da linguagem C.
+The **Libft** project helps develop essential skills such as:
 
-A função **`atoi`** é responsável por converter uma **string em um número inteiro**.
+- understanding how standard C library functions work internally
+- manipulating memory safely and consciously
+- handling strings without depending on external helpers
+- creating reusable and modular code
+- organizing C projects with a proper build system
+- producing a static library that can be reused in later projects
 
-Por exemplo:
+---
 
+## Function Highlights
+
+Below are some of the most important ideas and functions explored during the project.
+
+### `ft_atoi`
+
+The prefix `ft` stands for **forty-two**, and it is used to avoid conflicts with the original standard library functions.
+
+The function `ft_atoi` converts a string into an integer.
+
+For example:
+
+```c
+"   +42abc"
 ```
-"++++++42asdfjafs"
-```
 
-é convertido para:
+becomes:
 
-```
+```c
 42
 ```
 
-Isso é extremamente útil para entendermos **como tratar dados recebidos em formato textual** e convertê-los para valores numéricos utilizáveis em programas.
+This function is extremely useful because it teaches how textual data can be interpreted and transformed into numeric values that a program can use.
 
-Durante essa implementação, também aprendemos sobre **overflow de inteiros**.
+While implementing it, I also had to understand the concept of **integer overflow**. In a signed 32-bit integer, the maximum value is:
 
-Por exemplo, em um `signed int`, o valor máximo possível é:
-
-```
+```c
 2147483647
 ```
 
-Isso ocorre porque um inteiro de **32 bits** possui:
+because:
 
-* **1 bit reservado para o sinal**
-* **31 bits para representar o valor**
-
-O que resulta em:
-
-```
-2³¹ − 1 = 2147483647
-```
-
-Quando um valor maior que esse é passado para a função, ocorre **overflow**, o que gera resultados inesperados.
-
-No exercício da **Libft**, implementamos uma versão própria da função apenas para **entender profundamente seu funcionamento interno**. Posteriormente, podemos adaptá-la conforme as necessidades de nossos próprios projetos.
-
----
-
-### 🧵 Manipulação de Strings e Memória
-
-Outro ponto importante do projeto foi a criação de funções que lidam com **alocação dinâmica de memória**.
-
-Entre elas:
-
-* `ft_strjoin`
-* `ft_split`
-
-A função **`ft_strjoin`** permite unir duas strings em uma nova string alocada dinamicamente.
-
-Já **`ft_split`** permite dividir uma string em várias substrings com base em um delimitador, algo extremamente útil em parsing de dados.
-
-Também implementamos funções como:
-
-```
-ft_strlcpy
-```
-
-Essa função retorna o **tamanho total que a string teria**, mesmo quando o buffer de destino não é grande o suficiente.
-
-Isso é muito útil porque permite calcular **exatamente quanto espaço precisamos alocar na heap** para realizar operações seguras de cópia de strings.
-
-Durante esse processo, aprendemos uma lição fundamental da programação em C:
-
-> Tudo o que é alocado na memória deve ser liberado pelo programador.
-
-Ou seja:
-
-```
-malloc → precisa de free
-```
-
-Caso contrário, ocorrerão **memory leaks**, algo que é **rigorosamente avaliado durante os projetos da 42**.
-
----
-
-### ⚡ `memcpy` vs `memmove`
-
-Outro aprendizado importante envolve a manipulação direta de memória.
-
-Funções como:
-
-```
-memcpy
-memmove
-```
-
-parecem semelhantes, mas possuem uma diferença crucial.
-
-Se utilizarmos **`memcpy`** para copiar regiões de memória que **se sobrepõem**, podemos perder dados durante a operação.
-
-Já **`memmove`** resolve esse problema copiando os dados **de trás para frente**, garantindo que os bytes originais não sejam sobrescritos antes da cópia terminar.
-
-Esse tipo de detalhe é fundamental para entender **como a memória realmente funciona em baixo nível**.
-
----
-
-### 🔗 Linked Lists (Bonus Part)
-
-Na parte **bonus da Libft**, aprendemos a trabalhar com **listas ligadas (linked lists)** utilizando **structs em C**.
-
-Implementamos funções capazes de:
-
-* criar um novo nó (`ft_lstnew`)
-* adicionar elementos na lista (`ft_lstadd_front`, `ft_lstadd_back`)
-* calcular o tamanho da lista (`ft_lstsize`)
-* percorrer a lista
-* deletar nós (`ft_lstdelone`)
-* limpar toda a lista (`ft_lstclear`)
-
-Esse conhecimento foi extremamente útil em projetos posteriores da 42, como o **so_long**, onde estruturas de dados dinâmicas se tornam muito importantes para organizar informações complexas.
-
----
-
-
-### 📊 Function Table
-
-| Function   | Description                       |
-| ---------- | --------------------------------- |
-| ft_atoi    | Converts a string to an integer   |
-| ft_split   | Splits a string using a delimiter |
-| ft_strjoin | Concatenates two strings          |
-| ft_memcpy  | Copies memory area                |
-| ft_memmove | Safe memory copy with overlap     |
-
-Aqui está sua explicação organizada em **Markdown em português**, mantendo sua ideia original, mas estruturada para leitura clara em um README.
-
-### 🔍 Entendendo a função `ft_strlen`
 ```c
-/*#include <stdio.h>
-#include <string.h>*/
-#include "libft.h"
+2^31 - 1 = 2147483647
+```
 
-/*size_t	ft_strlen(const char *s);
+Reimplementing `atoi` was not only about reproducing behavior, but about understanding how parsing works internally.
 
-int	main(int argc, char **argv)
-{
-	int	result;
-	int	result2;
+---
 
-	if (argc < 2)
-		return (1);
-	result = ft_strlen(argv[1]);
-	result2 = strlen(argv[1]);
-	printf("(MY FUNCTION) %i.\n", result);
-	printf("(ORIGINAL) %i.\n", result2);
-	return (0);
-}*/
+### `ft_strlen`
 
+Another simple but fundamental function in the project is `ft_strlen`, which calculates the length of a string.
+
+```c
 size_t	ft_strlen(const char *s)
 {
 	size_t	length;
@@ -220,83 +133,153 @@ size_t	ft_strlen(const char *s)
 		length++;
 	return (length);
 }
-
 ```
-A função original `strlen` calcula o comprimento de uma string e retorna esse valor.
 
-Para testar minha implementação, costumo incluir a minha própria biblioteca **Libft** e deixar uma função `main` comentada no arquivo. Dessa forma, consigo transformar temporariamente o arquivo em um programa completo em C, e não apenas em uma função isolada.
+This function is a great exercise for understanding how strings are represented in C: a sequence of characters ending with the null terminator `'\0'`.
 
-Ao incluir o `libft.h`, posso utilizar a minha própria função `ft_strlen` em vez de usar a `strlen` original da biblioteca padrão da linguagem C.
+Even though this implementation uses indexing, it naturally opens the door to deeper topics such as:
 
-A ideia é simples:
+- pointer arithmetic
+- memory traversal
+- iteration through raw character sequences
+- the relationship between arrays and pointers in C
 
-1. Incluir o `libft.h`
-2. Descomentar a função `main`
-3. Compilar o programa
-4. Comparar os resultados entre `ft_strlen` e `strlen`
+Small functions like this are deceptively important because they strengthen the foundation needed for much more complex work later.
 
-Assim consigo verificar se o comportamento da minha implementação é o mesmo da função original.
+---
 
-No exemplo apresentado, a string é percorrida utilizando **índices**:
+### Dynamic Memory and String Manipulation
+
+A major part of **Libft** is learning how to work with dynamically allocated memory.
+
+Some important examples are:
+
+- `ft_strjoin`
+- `ft_split`
+- `ft_substr`
+- `ft_strdup`
+
+These functions taught me how to:
+
+- allocate the correct amount of memory
+- copy data safely
+- avoid invalid accesses
+- think carefully about ownership of allocated memory
+
+One of the most important lessons in C is simple:
 
 ```c
-while (s[length] != '\0')
-````
-
-Essa abordagem é bastante clara e fácil de entender, especialmente para quem está começando a aprender sobre manipulação de strings em C.
-
-No entanto, conforme fui avançando nos estudos e ganhando mais experiência como cadete, percebi que essa mesma função também poderia ser implementada utilizando **ponteiros**.
-
-Uma implementação baseada em ponteiros pode, em alguns casos:
-
-* reduzir o número de linhas de código
-* tornar a lógica mais direta
-* evitar a necessidade de uma variável de índice
-
-```c
-// Exemplo claro usando ponteiros, pensamento que evolui o código
-
-size_t ft_strlen(const char *s) {
-    if (!s)
-        return (0);
-    size_t length = 0;
-    while(*(s + length))
-         ++length;
-    return (length);
-}
+malloc -> free
 ```
-Além disso, o uso de índices depende de um valor numérico que está sendo incrementado. Embora nesse caso específico não seja um problema real, em outras situações o uso inadequado de índices pode levar a situações de **overflow ou underflow**.
 
-Esses são detalhes interessantes que começam a ficar mais claros à medida que aprofundamos nosso entendimento sobre **manipulação de memória e aritmética de ponteiros em C**.
+Anything allocated on the heap must eventually be released by the programmer.
 
-## How to use
+This discipline is essential to avoid **memory leaks**, which are rigorously evaluated in 42 projects.
 
-Para testar o projeto é bem simples o procedimento. Primeiro, rode o comando:
+---
+
+### `memcpy` vs `memmove`
+
+At first glance, `memcpy` and `memmove` seem very similar, but they solve slightly different problems.
+
+- `memcpy` is used to copy memory when the source and destination **do not overlap**
+- `memmove` is designed to handle **overlapping memory regions safely**
+
+This difference is crucial.
+
+If memory areas overlap and `memcpy` is used, the result is undefined and data may be corrupted.  
+`memmove`, on the other hand, preserves the original data by handling the copy in a safe direction depending on the situation.
+
+Understanding this distinction helped me think more precisely about how memory behaves at a low level.
+
+---
+
+## Bonus Part
+
+In the **bonus** section of Libft, I worked with **linked lists** using `structs` in C.
+
+Some of the implemented functions include:
+
+- `ft_lstnew`
+- `ft_lstadd_front`
+- `ft_lstadd_back`
+- `ft_lstsize`
+- `ft_lstdelone`
+- `ft_lstclear`
+- `ft_lstiter`
+- `ft_lstmap`
+
+This bonus part was extremely valuable because linked lists are one of the first dynamic data structures that really force us to think beyond arrays.
+
+It also became useful in later 42 projects, where organizing data dynamically becomes much more important.
+
+---
+
+## How To Use
+
+To compile the library, run:
 
 ```bash
 make
 ```
-Isso compila a nossa biblioteca e a deixa preparada para ser usada. Com isso, qualquer programa que tiveres como "program.c", que tenha uma função main, pode ser utilizado para os testes. Por padrão, usando o comando **make** isolado, o arquivo de configuração **Makefile** chama a regra padrão **all** configurada ou, se ela não estiver, chama a primeira que foi implementada.
 
-Podes colocar o **include "libft.h"**, no topo do arquivo de seu programa em C, e compilar o programa junto com a biblioteca libft.a como o exemplo a seguir:
-
-```bash
-cc -Wall -Werror -Wextra program.c -L ./libft.a
-```
-* "cc" é um alias para o compilador gcc ou clang disponíveis
-* As flags -Wall -Werror -Wextra mostra todos os warnings e não permite a compilação se tiver um único aviso, alerta. Muito usadas com rigor na École 42.
-* Um detalhe que podem notar é que, se quiserem e souberem quais funções irão usar, podem compilar o programa usando apenas elas como:
-```bash
-# Isso funciona por conta que sei que as duas conversam entre si
-cc -Wall -Werror -Wextra ft_memmove.c ft_memcpy.c
-```
-
-Compilações em C, normalmente, geram uma saída chamada "a.out", programa compilado e pronto para uso, podes colocar um novo nome especificando com a flag -o como o exemplo a seguir:
+This will generate the static library:
 
 ```bash
-cc -Wall -Werror -Wextra program.c -L ./libft.a -o myProgram
+libft.a
 ```
+
+If you also want the bonus part:
+
+```bash
+make bonus
+```
+
+### Example: compiling a program with Libft
+
+Create your own file, for example `program.c`, include the header at the top:
+
+```c
+#include "libft.h"
+```
+
+Then compile it together with your library:
+
+```bash
+cc -Wall -Wextra -Werror program.c libft.a -I . -o my_program
+```
+
+### Notes
+
+- `cc` is usually an alias for `gcc` or `clang`
+- `-Wall -Wextra -Werror` enables strict compilation warnings
+- `-I .` tells the compiler to search for headers in the current directory
+- `-o my_program` defines the output executable name
+
+If you want to test isolated functions during development, you can also compile only the files you need:
+
+```bash
+cc -Wall -Wextra -Werror ft_memcpy.c ft_memmove.c main.c -I . -o test_mem
+```
+
+This is useful for focused experiments while validating specific behaviors.
+
+---
 
 ## Team
 
-O projeto Libft é um projeto individual montado na École 42 e o primeiro que inicia o curso. Logo, sou o único membro nesse projeto.
+**Libft** is an individual project developed at **École 42**.
+
+So this project was entirely built by me.
+
+---
+
+## Final Note
+
+This project was much more than a simple library.
+
+It was my first real step into understanding how C works under the hood: how strings are stored, how memory is manipulated, how functions can be rebuilt from first principles, and how a programmer can start creating their own tools instead of depending only on what already exists.
+
+For me, **Libft** represents the beginning of true programming autonomy.
+
+---
